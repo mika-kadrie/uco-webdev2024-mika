@@ -1,7 +1,7 @@
 <x-template :title="$product->name">
-    <div class="d-lg-flex">
-        <div class="col-lg-8 bg-light border-lg-end">
-            <img class="w-100" src="{{ asset($product->image) }}">
+    <div class="d-flex">
+        <div class="col-lg-8 text-center">
+            <img class="img-thumbnail" src="{{ asset($product->image) }}">
         </div>
         <div class="col-lg-4 ">
             <div class="container px-lg-5 py-5">
