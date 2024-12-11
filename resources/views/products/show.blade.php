@@ -1,7 +1,7 @@
 <x-template :title="$product->name">
     <div class="d-flex">
         <div class="col-lg-8 text-center">
-            <img class="img-thumbnail" src="{{ asset($product->image) }}">
+            <img class="w-100 img-thumbnail" src="{{ asset($product->image) }}">
         </div>
         <div class="col-lg-4 ">
             <div class="container px-lg-5 py-5">

@@ -12,6 +12,15 @@
                 <textarea class="form-control" name="description" id="description">{{ $product->description ?? '' }}</textarea>
               </div>
               <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category_id" name="category_id" required>
+                    <option value="" disabled selected>Select category</option>
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}" @if(isset($product) && $product->category_id == $category->id) selected @endif>{{ $category->name }}</option>
+                    @endforeach
+                </select>
+              </div>
+              <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
                 <input type="number" class="form-control" name="price" id="price" value="{{ $product->price ?? 0 }}" min="1" required>
               </div>
