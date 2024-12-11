@@ -38,7 +38,7 @@ class ProductController extends Controller
             'name'=> $request->name,
             'description'=> $request->description,
             'price'=> $request->price,
-            'image'=> 'storage/products/default.jpg',
+            'image'=> $request->image,
         ]);
 
         return redirect()->route('products.show',['id' => $product->id]);

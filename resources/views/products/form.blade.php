@@ -16,6 +16,10 @@
                 <input type="number" class="form-control" name="price" id="price" value="{{ $product->price ?? 0 }}" min="1" required>
               </div>
               <div class="mb-3">
+                <label for="Image" class="form-label">Image</label>
+                <input type="text" class="form-control" name="image" id="image" value="{{ $product->image ?? '' }}" required>
+              </div>
+              <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Submit</button>
               </div>
         </form>
