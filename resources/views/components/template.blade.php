@@ -44,9 +44,9 @@
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ route('products.list') }}">All products</a>
                 </li>
-                @foreach (\App\Models\Category::get() as $category)
+                @foreach(\App\Models\Category::getOrdered() as $category)
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('products.list'),['category'=> $category->id] }}">{{$category->name}}</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('products.list', ['category' => $category->id]) }}">{{ $category->name }}</a>
                 </li>
                 @endforeach
             </ul>

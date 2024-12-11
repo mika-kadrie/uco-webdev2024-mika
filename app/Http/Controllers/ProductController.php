@@ -8,16 +8,23 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::get();
+        $products = Product::select();
+
+        if ($request->category) {
+            $products->where('category_id', $request->category);
+        }
+
+        $products = $products->get();
 
         return view('products.index', [
             'products' => $products
         ]);
+
     }
 
     /**
@@ -41,6 +48,7 @@ class ProductController extends Controller
         $product = Product::create([
             'name'=> $request->name,
             'description'=> $request->description,
+            'category_id' => $request->category_id,
             'price'=> $request->price,
             'image'=> $request->image,
         ]);
@@ -80,6 +88,8 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->description = $request->description;
         $product->price = $request->price;
+        $product->category = $request->category_id;
+        $product->image = $request->image;
         $product->save();
 
         return redirect()->route('products.show', ['id' => $product->id]);

@@ -12,7 +12,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('order_no')->get();
+        $categories = Category::getOrdered();
 
         return view('categories.index', [
             'categories' => $categories
@@ -36,7 +36,7 @@ class CategoryController extends Controller
     {
         $category = Category::create([
             'name' => $request->name,
-            'order_no' => $request->order_no,
+            'order_no' => $request->order_no
         ]);
 
         return redirect()->route('categories.list');
