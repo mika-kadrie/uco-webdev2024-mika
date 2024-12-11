@@ -60,7 +60,7 @@
                     <a class="nav-link" aria-current="page" href="{{ route('products.list') }}">Hoodies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('products.list') }}">Accesories</a>
+                    <a class="nav-link" aria-current="page" href="{{ route('products.list') }}">Accessories</a>
                 </li>
             </ul>
         </div>
